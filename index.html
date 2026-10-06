@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spinning Mahan</title>
+
+    <style>
+        html {
+            margin: none;
+            padding: none;
+        }
+        body {
+            background-color: crimson;
+        }
+        img {
+            position: relative;
+            left: 50%;
+            top: 50%;
+
+            translate: -50% -50%;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/image.png" alt="Spinning mahan" id="mahaaan" height="400"/>
+
+    <script>
+        var flexible = 0;
+
+        function rotate_mahaan() {
+            let image = document.getElementById("mahaaan");
+            image.style.transform = `rotate(${flexible % 360}deg)`;
+
+            flexible += 0.5;
+        }
+
+        setInterval(function loop() {
+            setTimeout(() => {
+                // Your logic here
+
+                rotate_mahaan()
+
+                loop();
+        }, 5000)})
+    </script>
+</body>
+</html>
